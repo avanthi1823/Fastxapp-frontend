@@ -1,0 +1,85 @@
+/* user-dashboard.css - fancy visuals */
+:root{
+  --accent:#d32f2f;
+  --accent-2:#ff5252;
+  --muted:#6c757d;
+  --card-radius:16px;
+  --glass: rgba(255,255,255,0.75);
+}
+
+body { background: linear-gradient(180deg,#fff 0%, #fffaf8 60%); }
+
+/* dashboard container */
+.ud-header { text-align:center; margin-bottom:18px; }
+.ud-title { color:var(--accent); font-weight:800; font-size:28px; letter-spacing:.6px; }
+.ud-sub { color:var(--muted); margin-top:6px; }
+
+/* tabs */
+.nav-pills .nav-link.active { background: linear-gradient(90deg,var(--accent),var(--accent-2)); color:#fff; border-radius:999px; box-shadow:0 6px 18px rgba(211,47,47,0.18); }
+.nav-pills .nav-link { border-radius:999px; padding:8px 18px; color:var(--muted); }
+
+/* card container */
+.dashboard-card { border-radius:var(--card-radius); }
+
+/* ticket card */
+.booking-ticket {
+  border-radius:14px;
+  overflow:hidden;
+  transition: transform .28s ease, box-shadow .28s ease;
+}
+.booking-ticket:hover { transform: translateY(-6px) scale(1.01); box-shadow: 0 20px 40px rgba(20,20,20,0.08); }
+
+/* header gradient */
+.ticket-head {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:14px 18px; color:#fff;
+  background: linear-gradient(90deg,var(--accent),var(--accent-2));
+}
+.ticket-head h5 { margin:0; font-size:18px; font-weight:700; }
+
+/* perforation */
+.ticket-perf {
+  height:18px; background:
+    radial-gradient(circle at 0 0, transparent 8px, #fff 9px),
+    radial-gradient(circle at 100% 0, transparent 8px, #fff 9px);
+  background-size: 40px 18px;
+  background-repeat: repeat-x;
+}
+
+/* body */
+.ticket-body { padding:18px; background:linear-gradient(180deg,#fff,#fffefc); }
+.ticket-row { display:flex; justify-content:space-between; gap:12px; align-items:center; }
+.ticket-meta { color:var(--muted); font-size:13px; }
+
+/* status badge */
+.badge-status { padding:6px 12px; border-radius:999px; font-weight:700; font-size:13px; color:#fff; }
+
+/* footer with actions */
+.ticket-footer { padding:14px 18px; background: #fbfbfb; display:flex; justify-content:space-between; align-items:center; gap:12px; }
+.ticket-actions .btn { border-radius:8px; }
+
+/* small pill */
+.pill { display:inline-block; padding:6px 10px; border-radius:999px; font-weight:600; font-size:13px; color:#fff; }
+
+/* skeleton */
+.skeleton {
+  background: linear-gradient(90deg,#eee,#f6f6f6,#eee);
+  background-size:200% 100%;
+  animation: shimmer 1.4s linear infinite;
+  border-radius:8px;
+}
+.skel-line{ height:12px; width:100%; margin-bottom:8px; }
+
+@keyframes shimmer { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
+
+/* payments list */
+.payment-item { border-radius:12px; padding:12px 16px; box-shadow:0 6px 18px rgba(20,20,20,0.03); background:#fff; }
+
+/* QuickBook widget */
+.quick-card { border-radius:12px; padding:18px; background: linear-gradient(180deg,#fff,#fffefc); box-shadow:0 10px 30px rgba(211,47,47,0.05); }
+
+/* neat responsive */
+@media (max-width:767px){
+  .ticket-row{flex-direction:column; align-items:flex-start;}
+  .ticket-footer{flex-direction:column; gap:8px; align-items:stretch;}
+}
